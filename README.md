@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PharmaGNN
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.4.
@@ -57,3 +58,39 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+=======
+# PharmaGNN Frontend
+
+PharmaGNN is a web-based application that leverages AI to provide insights about medicines. This repository contains the Angular frontend of the project.
+
+## Features
+- User authentication (Login & Signup)
+- Chat interface for AI-powered medicine inquiries
+- Contact page with a responsive form and image section
+- Clean and modern UI with smooth user experience
+
+## Installation & Setup
+### Prerequisites
+- Node.js (LTS version recommended)
+- Angular CLI
+- Git (optional)
+
+### Steps
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/pharmagnn-frontend.git
+   cd pharmagnn-frontend
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Run the development server:
+   ```sh
+   ng serve
+   ```
+4. Open the app in your browser at `http://localhost:4200/`
+
+Developed by **Aziz Arfaoui** 🚀
+
+>>>>>>> ea3df1c48509bec11fab52ab02bbe5dc64b8052a
