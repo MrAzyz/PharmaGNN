@@ -10,6 +10,8 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ChatComponent } from './components/chat/chat.component';
+import {HttpClientModule} from '@angular/common/http';
+import {SweetAlert2Module} from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
@@ -17,14 +19,16 @@ import { ChatComponent } from './components/chat/chat.component';
     NavbarComponent,
     HomeComponent,
     FooterComponent,
-    LoginComponent,
-    SignupComponent,
-    ContactComponent,
-    ChatComponent
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    SweetAlert2Module.forRoot(),
+    LoginComponent,
+    SignupComponent,
+    ChatComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

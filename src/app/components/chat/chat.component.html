@@ -2,18 +2,38 @@
   <div class="chat-header">
     <h2>Chat with PharmaGNN</h2>
   </div>
+
+  <!-- Dynamic Messages -->
   <div class="chat-messages">
-    <!-- Example messages; these can be dynamically generated -->
-    <div class="message bot-message">
-      <p>Hello! How can I help you today?</p>
+    <div *ngFor="let message of messages"
+         class="message"
+         [class.user-message]="message.isUser"
+         [class.bot-message]="!message.isUser">
+      <p>{{ message.text }}</p>
     </div>
-    <div class="message user-message">
-      <p>I'm having an issue with my prescription details.</p>
+
+    <!-- Loading State -->
+    <div *ngIf="isLoading" class="message bot-message">
+      <p>Analyzing your question...</p>
+    </div>
+
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="message bot-message error">
+      <p>{{ errorMessage }}</p>
     </div>
   </div>
+
+  <!-- Input Section (Preserved Structure) -->
   <div class="chat-input">
-    <input type="text" placeholder="Type your question here..." />
-    <button class="send-btn">
+    <input type="text"
+           [(ngModel)]="userInput"
+           (keyup)="handleKeyPress($event)"
+           placeholder="Type your question here..."
+           [disabled]="isLoading">
+
+    <button class="send-btn"
+            (click)="sendMessage()"
+            [disabled]="isLoading">
       <lord-icon
         src="https://cdn.lordicon.com/hydhpbyz.json"
         trigger="hover"
